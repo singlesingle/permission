@@ -15,7 +15,19 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from controller import user_controller
+from controller import role_controller
+from controller import permission_controller
+import static
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^page/user/list', user_controller.list),
+    url(r'^page/role/list', role_controller.list),
+    url(r'^page/permission/list', permission_controller.list),
+    url(r'^api/user/add', user_controller.add),
+    url(r'^api/role/add', role_controller.add),
+    url(r'^api/permission/add', permission_controller.add),
 ]
+urlpatterns += staticfiles_urlpatterns()

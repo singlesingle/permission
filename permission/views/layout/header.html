@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ch">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="ThemeBucket">
+<link rel="shortcut icon" type="image/x-icon" href="/static/img/logo.png"/>
+<title>权限管理系统</title>
+<!--Core CSS -->
+<link href="/static/bs3/css/bootstrap.min.css" rel="stylesheet">
+<link href="/static/js/jquery-ui/jquery-ui-1.10.1.custom.min.css" rel="stylesheet">
+<link href="/static/js/advanced-datatable/css/jquery.dataTables.css" rel="stylesheet">
+<link href="/static/css/bootstrap-reset.css" rel="stylesheet">
+<link href="/static/css/bootstrap-switch.css" rel="stylesheet">
+<link href="/static/font-awesome/css/font-awesome.css" rel="stylesheet">
+<link href="/static/js/jvector-map/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+<link href="/static/css/clndr.css" rel="stylesheet">
+<!--clock css-->
+<link href="/static/js/css3clock/css/style.css" rel="stylesheet">
+<!--Morris Chart CSS -->
+<link rel="stylesheet" href="/static/js/morris-chart/morris.css">
+<!-- Custom styles for this template -->
+<link href="/static/css/style.css" rel="stylesheet">
+<link href="/static/css/style-responsive.css" rel="stylesheet"/>
+<script src="/static/js/jquery.js"></script>
+</head>
+<body>
+<section id="container">
+    <!--header start-->
+    <header class="header fixed-top clearfix">
+        <!--logo start-->
+        <div class="brand">
+
+            <a href="/page/user/list" class="logo">
+                权限管理系统
+            </a>
+            <div class="sidebar-toggle-box">
+                <div class="fa fa-bars"></div>
+            </div>
+        </div>
+
+        <div class="nav notify-row" id="top_menu">
+            <!--  notification start -->
+            <ul class="nav top-menu">
+                <!-- notification dropdown start-->
+                <li id="header_notification_bar" class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+
+                        <i class="fa fa-bell-o"></i>
+                    </a>
+                </li>
+                <!-- notification dropdown end -->
+            </ul>
+            <!--  notification end -->
+        </div>
+
+        <!--logo end-->
+        <div class="top-nav clearfix">
+            <!--search & user info start-->
+            <ul class="nav pull-right top-menu">
+                <!-- user login dropdown start-->
+                <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                    <img alt="{$name}" src="/static/img/avatar1_small.jpg">
+                    <span class="username">巩立新</span>
+                    <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu extended logout">
+                    <li><a href=""><i class="fa fa-suitcase"></i>个人信息</a></li>
+                    <li><a href=""><i class="fa fa-key"></i> 退出登陆</a></li>
+                </ul>
+                </li>
+                <!-- user login dropdown end -->
+            </ul>
+            <!--search & user info end-->
+        </div>
+    </header>
+    <!--header end-->
+    <!--sidebar start-->
+    <aside>
+        <div id="sidebar" class="nav-collapse">
+            <!-- sidebar menu start-->
+            <div class="leftside-navigation">
+                <ul class="sidebar-menu" id="nav-accordion">
+                    <li class="sub-menu">
+                        <a href="javascript:;" class="{% ifequal page_topo 'user' %}active{% endifequal %}">
+                            <i class="fa fa-users"></i>
+                            <span>用户</span>
+                        </a>
+                        <ul class="sub">
+                            <li {% ifequal page_topo 'user' %}class="active"{% endifequal %}><a href="/page/user/list">用户列表</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;" class="{% ifequal page_topo 'role' %}active{% endifequal %}">
+                            <i class="fa fa-fire"></i>
+                            <span>角色</span>
+                        </a>
+                        <ul class="sub">
+                            <li {% ifequal page_topo 'role' %}class="active"{% endifequal %}><a href="/page/role/list">角色列表</a></li>
+                        </ul>
+                    </li>
+                    <li class="sub-menu">
+                        <a href="javascript:;" class="{% ifequal page_topo 'permission' %}active{% endifequal %}">
+                            <i class="fa fa-file-text"></i>
+                            <span>权限</span>
+                        </a>
+                        <ul class="sub">
+                            <li {% ifequal page_topo 'permission' %}class="active"{% endifequal %}><a href="/page/permission/list">权限列表</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- sidebar menu end-->
+        </div>
+    </aside>
+    <!--sidebar end-->
+    <section id="main-content">
+    <section class="wrapper">
